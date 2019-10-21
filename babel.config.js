@@ -3,6 +3,7 @@ module.exports = {
     '@vue/app'
   ],
   plugins: [
+    ["@babel/plugin-transform-modules-commonjs", { "strictMode": false }],
     ["component", 
       {
         "libraryName": "mint-ui",

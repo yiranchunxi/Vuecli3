@@ -5,7 +5,9 @@ import Main from './components/home/home.vue'
 import Member from './components/member/member.vue'
 import Shopcar from './components/shopcar/shopcar.vue'
 import Search from './components/search/search.vue'
-
+import NewsList from './components/news/NewsList.vue'
+import NewsInfo from './components/news/NewsInfo.vue'
+import PhotoList from './components/photos/PhotoList.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -37,6 +39,18 @@ export default new Router({
     {
       path:'/search',
       component:Search
+    },
+    {
+       path:'/home/newslist',
+       component:NewsList 
+    },
+    {
+      path:'/home/newsinfo/:id',
+      component:NewsInfo 
+    },
+    {
+      path:'/home/photolist',
+      component:PhotoList
     }
   ],
   linkActiveClass:'mui-active'
