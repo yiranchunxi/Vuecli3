@@ -15,7 +15,7 @@ import 'mint-ui/lib/style.css'
 import './lib/mui/css/mui.min.css'
 import './lib/mui/css/icons-extra.css'
 
-
+import VuePreview from 'vue-preview'
 
 
 Vue.config.productionTip = false
@@ -26,7 +26,7 @@ Vue.use(VueAxios, axios)
 Vue.use(MintUI)
 
 //Vue.use(Lazyload);
-
+Vue.use(VuePreview)
 
 // 定义全局的过滤器
 Vue.filter('dateFormat',function(dataStr,pattern="YYYY-MM-DD HH:mm:ss"){
