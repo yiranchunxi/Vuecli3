@@ -1,6 +1,6 @@
 <template>
     <div class="goods-list">
-        <div class="goods-item">
+        <div class="goods-item" @click="goDetail(666)">
             <img src="https://2c.zol-img.com.cn/product/201_220x165/592/cemGYCgkqZ5g.jpg"  alt=""/>
             <h1 class="title">
                 OPPO Reno Ace（8GB/128GB/全网通)
@@ -16,7 +16,7 @@
                </p>
             </div>
         </div>
-        <div class="goods-item">
+        <div class="goods-item" @click="goDetail(666)">
             <img src="https://2e.zol-img.com.cn/product/201_220x165/248/ceNlyXftWlpBQ.jpg"  alt=""/>
             <h1 class="title">
                 vivo NEX 3（8GB/256GB/全网通/5G版） 
@@ -32,7 +32,7 @@
                </p>
             </div>
         </div>
-        <div class="goods-item">
+        <div class="goods-item" @click="goDetail(666)">
             <img src="https://2a.zol-img.com.cn/product/201_220x165/294/cesz5wU0SN0Gc.jpg"  alt=""/>
             <h1 class="title">
                一加7T（8GB/128GB/全网通）
@@ -57,6 +57,20 @@
                 
             }
         },
+        methods:{
+            goDetail(id){
+                // 使用JS的形式进行路由导航   
+                // 注意： 一定要区分 this.$route 和 this.$router 这两个对象，
+                // 其中： this.$route 是路由【参数对象】，所有路由中的参数， params, query 都属于它
+                // 其中： this.$router 是一个路由【导航对象】，用它 可以方便的 使用 JS 代码，实现路由的 前进、后退、 跳转到新的 URL 地址
+                 // 1. 最简单的
+                // this.$router.push("/home/goodsinfo/"+id);
+                //2传递对象
+                //this.$router.push({path:"home/goodsinfo/"+id});
+                // 3. 传递命名的路由
+                this.$router.push({name:"goodsinfo",params:{id}})
+            }
+        }
     }
 </script>
 <style lang="less" scoped>

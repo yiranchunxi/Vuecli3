@@ -11,6 +11,7 @@ import PhotoList from './components/photos/PhotoList.vue'
 import PhotoInfo from './components/photos/PhotoInfo.vue'
 import GoodsList from './components/goods/GoodsList.vue'
 import MintUiTest from './components/test/MintTest.vue'
+import GoodsInfo from './components/goods/GoodsInfo.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -66,6 +67,11 @@ export default new Router({
     {
       path:'/home/mintuitest',
       component:MintUiTest
+    },
+    {
+      name:'goodsinfo',
+      path:'/home/goodsinfo/:id',
+      component:  GoodsInfo
     }
   ],
   linkActiveClass:'mui-active'

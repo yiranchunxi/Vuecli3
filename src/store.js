@@ -4,13 +4,16 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-  state: {
+  state: {  //this.$store.state.****
 
   },
-  mutations: {
+  mutations: { //this.$store.commit('方法的名称','按需传递唯一的参数')
 
   },
-  actions: {
+  actions: { //
+
+  },
+  getters:{ //this.$store.getters.*****
 
   }
 })

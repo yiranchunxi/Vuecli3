@@ -14,8 +14,8 @@
 				<span class="mui-icon mui-icon-contact"></span>
 				<span class="mui-tab-label">会员</span>
 			</router-link>
-			<router-link class="mui-tab-item1" to="/shopcar">
-				<span class="mui-icon mui-icon-extra mui-icon-extra-cart"><span class="mui-badge">0</span></span>
+			<router-link class="mui-tab-item1" to="/shopcar" >
+				<span class="mui-icon mui-icon-extra mui-icon-extra-cart"><span class="mui-badge" id="badge">0</span></span>
 				<span class="mui-tab-label">购物车</span>
 			</router-link>
 			<router-link class="mui-tab-item1" to="/search">
@@ -26,7 +26,7 @@
   </div>
 </template>
 
-<style lang="less">
+<style lang="less" scoped>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -71,18 +71,6 @@
     .mint-header.is-fixed{
       z-index: 99 !important;
     }
-
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
   //进
   .v-enter{
     opacity: 0;
@@ -98,6 +86,18 @@
   .v-enter-active,.v-leave-active{
     transition: all 0.5s ease;
   }
+}
+#nav {
+  padding: 30px;
+  a {
+    font-weight: bold;
+    color: #2c3e50;
+    &.router-link-exact-active {
+      color: #42b983;
+    }
+  }
+}
+  
 
   
 </style>
