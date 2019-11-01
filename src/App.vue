@@ -1,7 +1,11 @@
 <template>
   <div id="app">
      <!-- 顶部Header 区域 -->
-     <mt-header fixed title="Vue项目"></mt-header>
+     <mt-header fixed title="Vue项目">
+       <span slot="left" @click="goBack" v-show="flag">
+         <mt-button icon="back">返回</mt-button>
+       </span> 
+     </mt-header>
      <transition>
         <router-view></router-view>
      </transition>  
@@ -15,7 +19,7 @@
 				<span class="mui-tab-label">会员</span>
 			</router-link>
 			<router-link class="mui-tab-item1" to="/shopcar" >
-				<span class="mui-icon mui-icon-extra mui-icon-extra-cart"><span class="mui-badge" id="badge">0</span></span>
+				<span class="mui-icon mui-icon-extra mui-icon-extra-cart"><span class="mui-badge" id="badge">{{$store.getters.getAllCount}}</span></span>
 				<span class="mui-tab-label">购物车</span>
 			</router-link>
 			<router-link class="mui-tab-item1" to="/search">
@@ -25,7 +29,33 @@
 		</nav>
   </div>
 </template>
-
+<script>
+      export default {
+          data() {
+            return {
+              flag:false
+            }
+          },
+          created(){
+             this.flag=this.$route.path==="/home"?false:true; 
+          },
+          methods:{
+            goBack(){
+              //点击后退
+              this.$router.go(-1);
+            }
+          },
+          watch:{
+            "$route.path":function(newVal){
+              if(newVal==="/home"){
+                this.flag=false;
+              }else{
+                this.flag=true;
+              }
+            }
+          }
+      }
+</script>
 <style lang="less" scoped>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;

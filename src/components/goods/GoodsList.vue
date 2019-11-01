@@ -1,6 +1,6 @@
 <template>
     <div class="goods-list">
-        <div class="goods-item" @click="goDetail(666)">
+        <div class="goods-item" @click="goDetail(100)">
             <img src="https://2c.zol-img.com.cn/product/201_220x165/592/cemGYCgkqZ5g.jpg"  alt=""/>
             <h1 class="title">
                 OPPO Reno Ace（8GB/128GB/全网通)
@@ -8,7 +8,7 @@
             <div class="info">
                 <p class="price">
                     <span class="now">￥2999</span>
-                    <span class="old">￥3199</span>
+                    <span class="old">￥3299</span>
                 </p>
                <p class="sell">
                    <span>热卖中</span>
@@ -16,7 +16,7 @@
                </p>
             </div>
         </div>
-        <div class="goods-item" @click="goDetail(666)">
+        <div class="goods-item" @click="goDetail(101)">
             <img src="https://2e.zol-img.com.cn/product/201_220x165/248/ceNlyXftWlpBQ.jpg"  alt=""/>
             <h1 class="title">
                 vivo NEX 3（8GB/256GB/全网通/5G版） 
@@ -32,14 +32,14 @@
                </p>
             </div>
         </div>
-        <div class="goods-item" @click="goDetail(666)">
+        <div class="goods-item" @click="goDetail(102)">
             <img src="https://2a.zol-img.com.cn/product/201_220x165/294/cesz5wU0SN0Gc.jpg"  alt=""/>
             <h1 class="title">
                一加7T（8GB/128GB/全网通）
             </h1>
             <div class="info">
                 <p class="price">
-                    <span class="now">￥2999</span>
+                    <span class="now">￥2888</span>
                     <span class="old">￥3299</span>
                 </p>
                <p class="sell">

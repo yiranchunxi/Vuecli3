@@ -63,16 +63,32 @@
 				lunbotu:[{img:"https://2c.zol-img.com.cn/product/202_200x150/550/ceViNy1p1AvdA.jpg"},
 						 {img:"http://2a.zol-img.com.cn/product/201_320x240/474/ceDiPO20qRL3U.jpg"},
 						 {img:"https://2b.zol-img.com.cn/product/202_200x150/555/cegHETLgn6whw.jpg"}],
-				goodsinfo:{title:"OPPO Reno Ace（8GB/128GB/全网通",
-							market_price:"3199",
-							sell_price:"2999",
-							stock_quantity:60},
+				goodsinfo:{},
 				ballFlag:false,  // 控制小球的隐藏和显示的标识符
 				selectedCount:1	 // 保存用户选中的商品数量， 默认，认为用户买1个				         
             }
 		},
 		created(){
-
+			switch(this.id){
+					case 100:
+						this.goodsinfo={title:"OPPO Reno Ace（8GB/128GB/全网通)",
+							market_price:"3299",
+							sell_price:"2999",
+							stock_quantity:60}
+					break;
+					case 101:
+						this.goodsinfo={title:"vivo NEX 3（8GB/256GB/全网通/5G版）",
+							market_price:"5698",
+							sell_price:"4999",
+							stock_quantity:50}
+					break;
+					case 102:
+						this.goodsinfo={title:"一加7T（8GB/128GB/全网通）",
+							market_price:"3199",
+							sell_price:"2888",
+							stock_quantity:40}
+					break;	
+			}
 		},
 		methods:{
 			getSelectedCount(count){
@@ -81,7 +97,14 @@
 				console.log("父组件拿到的数量值为："+this.selectedCount)	
 			},
 			addToShopCar(){
+				//添加到购物车
 				this.ballFlag=!this.ballFlag;	
+				 // {id:商品的id,count:要购买的数量,price:商品的单价,selected:false 是否在购物车中勾选中}
+				 //拼接出一个，要保存到store中car数组里的商品信息对象
+				 var goodsinfo={id:this.id,count:this.selectedCount,title:this.goodsinfo.title,price:this.goodsinfo.sell_price,selected:true}
+
+				 //调用store中的mutations来将商品加入购物车
+				 this.$store.commit("addToCar",goodsinfo);
 			},
 			beforeEnter(el){
 				console.log(el)
